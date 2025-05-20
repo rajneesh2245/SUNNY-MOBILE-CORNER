@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunny Mobile Corner - Fastest Phone Delivery in Patna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+        }
+        
+        .delivery-badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+            }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .delivery-map {
+            background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Patna,Bihar&zoom=12&size=600x300&maptype=roadmap&markers=color:red%7CPatna,Bihar&key=YOUR_API_KEY');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Announcement Bar -->
+    <div class="bg-indigo-600 text-white text-center py-2 px-4">
+        <p class="text-sm font-medium">🚀 Get your favorite phones delivered in just 2 hours! Currently serving Patna region.</p>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-mobile-alt text-indigo-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">Sunny Mobile Corner</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="#phones" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Phones</a>
+                        <a href="#accessories" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Accessories</a>
+                        <a href="#delivery" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Delivery</a>
+                        <a href="#about" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none">
+                        <i class="fas fa-search h-6 w-6"></i>
+                    </button>
+                    <button class="ml-3 bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none">
+                        <i class="fas fa-shopping-cart h-6 w-6"></i>
+                        <span class="sr-only">Cart</span>
+                    </button>
+                    <button class="ml-3 bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none">
+                        <i class="fas fa-user h-6 w-6"></i>
+                        <span class="sr-only">Account</span>
+                    </button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <span class="delivery-badge inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-500 text-white mb-4">
+                    <i class="fas fa-bolt mr-1"></i> 2-HOUR DELIVERY
+                </span>
+                <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                    Your Dream Phone, Delivered in a Flash
+                </h1>
+                <p class="mt-6 max-w-lg mx-auto text-xl">
+                    We bring the latest smartphones and accessories to your doorstep faster than anyone else in Patna.
+                </p>
+                <div class="mt-10">
+                    <a href="#phones" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-indigo-600 bg-white hover:bg-gray-50">
+                        Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Delivery Area Checker -->
+    <div class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Delivery Check</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Are we in your neighborhood?
+                </p>
+            </div>
+            
+            <div class="mt-10 max-w-xl mx-auto">
+                <div class="flex">
+                    <input type="text" placeholder="Enter your PIN code" class="flex-1 min-w-0 block w-full px-3 py-3 rounded-l-md border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    <button class="inline-flex items-center px-4 py-3 border border-transparent text-sm font-medium rounded-r-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Check <i class="fas fa-map-marker-alt ml-2"></i>
+                    </button>
+                </div>
+                <p class="mt-2 text-sm text-gray-500">Currently serving Patna, Danapur, Phulwari Sharif, and Patna City</p>
+            </div>
+            
+            <div class="mt-10 delivery-map rounded-lg shadow-lg h-64 w-full"></div>
+        </div>
+    </div>
+    
+    <!-- Featured Phones -->
+    <div id="phones" class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Latest Models</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Premium Smartphones
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Get the newest flagship phones with our ultra-fast delivery
+                </p>
+            </div>
+            
+            <div class="mt-10 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+                <!-- Product 1 -->
+                <div class="product-card group relative bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <img src="https://m.media-amazon.com/images/I/61lYIKPieDL._SL1500_.jpg" alt="iPhone 14 Pro" class="w-full h-full object-center object-contain">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    iPhone 14 Pro
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">128GB, Space Black</p>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900">₹1,29,900</p>
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">In Stock</span>
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-bolt text-yellow-500 mr-1"></i> 2-Hour Delivery
+                        </span>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to cart
+                    </button>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card group relative bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <img src="https://m.media-amazon.com/images/I/71ArNqdq1yL._SL1500_.jpg" alt="Samsung Galaxy S23 Ultra" class="w-full h-full object-center object-contain">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Samsung S23 Ultra
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">256GB, Phantom Black</p>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900">₹1,24,999</p>
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">In Stock</span>
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-bolt text-yellow-500 mr-1"></i> 2-Hour Delivery
+                        </span>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to cart
+                    </button>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card group relative bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <img src="https://m.media-amazon.com/images/I/61SUj2a2AL._SL1500_.jpg" alt="OnePlus 11 5G" class="w-full h-full object-center object-contain">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a href="#">
+                                    <span aria-hidden="true class="absolute inset-0"></span>
+                                    OnePlus 11 5G
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">256GB, Eternal Green</p>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900">₹61,999</p>
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">In Stock</span>
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-bolt text-yellow-500 mr-1"></i> 2-Hour Delivery
+                        </span>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to cart
+                    </button>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card group relative bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <img src="https://m.media-amazon.com/images/I/71geV5enlVL._SL1500_.jpg" alt="Google Pixel 7 Pro" class="w-full h-full object-center object-contain">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Google Pixel 7 Pro
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">128GB, Snow</p>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900">₹84,999</p>
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">In Stock</span>
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-bolt text-yellow-500 mr-1"></i> 2-Hour Delivery
+                        </span>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to cart
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center">
+                <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                    View All Phones <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Accessories Section -->
+    <div id="accessories" class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Must-Have Add-ons</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Premium Accessories
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Complete your mobile experience with our curated selection
+                </p>
+            </div>
+            
+            <div class="mt-10 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+                <!-- Accessory 1 -->
+                <div class="product-card group relative bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <img src="https://m.media-amazon.com/images/I/71W7eZC2+eL._SL1500_.jpg" alt="AirPods Pro" class="w-full h-full object-center object-contain">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    AirPods Pro (2nd Gen)
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">Active Noise Cancellation</p>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900">₹24,900</p>
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">In Stock</span>
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-bolt text-yellow-500 mr-1"></i> 2-Hour Delivery
+                        </span>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to cart
+                    </button>
+                </div>
+                
+                <!-- Accessory 2 -->
+                <div class="product-card group relative bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <img src="https://m.media-amazon.com/images/I/61uG6GWBZBL._SL1500_.jpg" alt="Apple Watch" class="w-full h-full object-center object-contain">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    Apple Watch Series 8
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">GPS, 45mm, Midnight</p>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900">₹45,900</p>
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">In Stock</span>
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-bolt text-yellow-500 mr-1"></i> 2-Hour Delivery
+                        </span>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to cart
+                    </button>
+                </div>
+                
+                <!-- Accessory 3 -->
+                <div class="product-card group relative bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <img src="https://m.media-amazon.com/images/I/71OZY035QVL._SL1500_.jpg" alt="Wireless Charger" class="w-full h-full object-center object-contain">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    MagSafe Wireless Charger
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">15W Fast Charging</p>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900">₹3,999</p>
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">In Stock</span>
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-bolt text-yellow-500 mr-1"></i> 2-Hour Delivery
+                        </span>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to cart
+                    </button>
+                </div>
+                
+                <!-- Accessory 4 -->
+                <div class="product-card group relative bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <img src="https://m.media-amazon.com/images/I/71qA2iS8HmL._SL1500_.jpg" alt="Power Bank" class="w-full h-full object-center object-contain">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a href="#">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    20,000mAh Power Bank
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">18W Fast Charging</p>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900">₹1,899</p>
+                    </div>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">In Stock</span>
+                        <span class="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded flex items-center">
+                            <i class="fas fa-bolt text-yellow-500 mr-1"></i> 2-Hour Delivery
+                        </span>
+                    </div>
+                    <button class="mt-4 w-full bg-indigo-600 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none">
+                        <i class="fas fa-cart-plus mr-2"></i> Add to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- How It Works -->
+    <div id="delivery" class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Swift Delivery</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    How Our 2-Hour Delivery Works
+                </p>
+            </div>
+            
+            <div class="mt-10">
+                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <span class="text-xl font-bold">1</span>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Order Your Device</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Browse our selection and place your order through our website or app. We accept all major payment methods.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <span class="text-xl font-bold">2</span>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Nearest Warehouse Dispatch</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Our system automatically assigns your order to the nearest micro-fulfillment center in Patna with inventory.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                            <span class="text-xl font-bold">3</span>
+                        </div>
+                        <div class="ml-16">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Hyper-Local Delivery</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Our delivery partner picks up your order and brings it directly to your doorstep within 2 hours anywhere in Patna.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-16 bg-white overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                                <i class="fas fa-clock text-white text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900">Delivery Time Slots</h3>
+                                <div class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                    <div class="border border-gray-200 rounded-md p-4">
+                                        <h4 class="text-sm font-medium text-gray-900">Morning</h4>
+                                        <p class="mt-1 text-sm text-gray-500">9:00 AM - 12:00 PM</p>
+                                    </div>
+                                    <div class="border border-gray-200 rounded-md p-4">
+                                        <h4 class="text-sm font-medium text-gray-900">Afternoon</h4>
+                                        <p class="mt-1 text-sm text-gray-500">12:00 PM - 4:00 PM</p>
+                                    </div>
+                                    <div class="border border-gray-200 rounded-md p-4">
+                                        <h4 class="text-sm font-medium text-gray-900">Evening</h4>
+                                        <p class="mt-1 text-sm text-gray-500">4:00 PM - 8:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Testimonials -->
+    <div class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Customer Stories</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    What Our Customers Say
+                </p>
+            </div>
+            
+            <div class="mt-10 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya K.">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-900">Priya K.</div>
+                            <div class="flex items-center mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-600">
+                            "I ordered the iPhone 14 Pro at 3 PM and it was at my door by 4:30 PM! The delivery executive even helped me set up the phone. Unbelievable service!"
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul S.">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-900">Rahul S.</div>
+                            <div class="flex items-center mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-600">
+                            "My phone broke before an important client meeting. Sunny Mobile Corner delivered a replacement Samsung S23 Ultra in just 1 hour 45 minutes. Lifesavers!"
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ananya P.">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-900">Ananya P.</div>
+                            <div class="flex items-center mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-600">
+                            "The prices are competitive with other retailers in Patna, but the 2-hour delivery makes it worth every penny. Got AirPods delivered while I was still working from home."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About Section -->
+    <div id="about" class="bg-indigo-700 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                        About Sunny Mobile Corner
+                    </h2>
+                    <p class="mt-3 max-w-3xl text-lg leading-6 text-indigo-200">
+                        We're revolutionizing mobile commerce in Patna with our network of micro-fulfillment centers strategically located across the city. Our mission is to get you the latest smartphones and accessories faster than anyone else.
+                    </p>
+                    <div class="mt-8 flex">
+                        <div class="mr-8">
+                            <p class="text-lg font-medium text-white">15+</p>
+                            <p class="mt-1 text-base text-indigo-200">Micro-Fulfillment Centers</p>
+                        </div>
+                        <div class="mr-8">
+                            <p class="text-lg font-medium text-white">98%</p>
+                            <p class="mt-1 text-base text-indigo-200">On-Time Delivery Rate</p>
+                        </div>
+                        <div>
+                            <p class="text-lg font-medium text-white">5,000+</p>
+                            <p class="mt-1 text-base text-indigo-200">Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0">
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                        <div class="px-6 py-8 sm:p-10 sm:pb-6">
+                            <div class="flex justify-between">
+                                <h3 class="text-2xl font-medium text-gray-900">Join Our Team</h3>
+                                <i class="fas fa-bicycle text-indigo-600 text-4xl"></i>
+                            </div>
+                            <p class="mt-4 text-base text-gray-500">
+                                We're always looking for delivery partners to join our hyper-local network in Patna.
+                            </p>
+                            <div class="mt-6">
+                                <a href="#" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                                    Apply Now <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="px-6 py-8 bg-indigo-50 sm:px-10">
+                            <h4 class="text-sm font-medium text-gray-900">Delivery Partner Benefits</h4>
+                            <ul class="mt-4 space-y-3">
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                    </div>
+                                    <p class="ml-2 text-sm text-gray-700">Earn ₹20,000 - ₹35,000 per month</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                    </div>
+                                    <p class="ml-2 text-sm text-gray-700">Flexible working hours</p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                    </div>
+                                    <p class="ml-2 text-sm text-gray-700">Performance bonuses</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Newsletter -->
+    <div class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Stay Updated
+                    </h2>
+                    <p class="mt-3 max-w-3xl text-lg leading-6 text-gray-500">
+                        Sign up for our newsletter to get updates on new products, exclusive deals, and delivery area expansions in Patna.
+                    </p>
+                </div>
+                <div class="mt-8 lg:mt-0">
+                    <form class="sm:flex">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input id="email-address" name="email" type="email" autocomplete="email" required class="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs rounded-md" placeholder="Enter your email">
+                        <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                            <button type="submit" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+                    <p class="mt-3 text-sm text-gray-500">
+                        We care about your data. Read our
+                        <a href="#" class="text-indigo-600 font-medium underline">Privacy Policy</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Shop</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">All Phones</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Latest Models</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Accessories</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Deals</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Returns</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Warranty</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Connect</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Instagram</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Facebook</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+                <div class="flex space-x-6 md:order-2">
+                    <a href="#" class="text-gray-400 hover:text-gray-300">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-300">
+                        <i class="fab fa-instagram"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-300">
+                        <i class="fab fa-twitter"></i>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-300">
+                        <i class="fab fa-youtube"></i>
+                        <span class="sr-only">YouTube</span>
+                    </a>
+                </div>
+                <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+                    &copy; 2023 Sunny Mobile Corner. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-6 right-6">
+        <button class="p-4 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span class="absolute top-0 right-0 h-6 w-6 rounded-full bg-red-500 flex items-center justify-center text-xs font-bold">3</span>
+        </button>
+    </div>
+    
+    <script>
+        // Simple JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // PIN code checker simulation
+            const pinInput = document.querySelector('input[type="text"]');
+            const checkButton = document.querySelector('button:has(i.fa-map-marker-alt)');
+            
+            if (checkButton) {
+                checkButton.addEventListener('click', function() {
+                    if (pinInput.value.trim() !== '') {
+                        alert('🎉 Great news! We deliver to your area in Patna with our 2-hour service.');
+                    } else {
+                        alert('Please enter a PIN code to check delivery availability.');
+                    }
+                });
+            }
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('form.sm\\:flex');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('email-address').value;
+                    if (email.includes('@')) {
+                        alert('Thanks for subscribing! You\'ll receive our next newsletter soon.');
+                        document.getElementById('email-address').value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            }
+            
+            // Add to cart buttons
+            const addToCartButtons = document.querySelectorAll('button:has(i.fa-cart-plus)');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.closest('.product-card').querySelector('h3 a').textContent.trim();
+                    alert(`${productName} has been added to your cart!`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
