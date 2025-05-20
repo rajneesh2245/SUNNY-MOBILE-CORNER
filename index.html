@@ -808,5 +808,49 @@
             });
         });
     </script>
-</body>
+<!-- Firebase SDK (Add before closing </body>) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+
+<script>
+  // Firebase Config (Replace with your actual config!)
+  const firebaseConfig = {
+    apiKey: "AIzaSyBgufpL35nU_zqK94kycvPx8rh7UgbQJSI",
+    authDomain: "sunnymobilecorner-114.firebaseapp.com",
+    projectId: "sunnymobilecorner-114",
+    storageBucket: "sunnymobilecorner-114.firebasestorage.app",
+    messagingSenderId: "516561257863",
+    appId: "1:516561257863:web:63210bda2081bfc4aabf22"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  // Fetch Products from Firestore
+  function loadProducts() {
+    const productsContainer = document.getElementById("products-list"); // Ensure this matches your HTML
+    
+    db.collection("products").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const product = doc.data();
+        
+        // Create HTML for each product (customize this to match your design)
+        productsContainer.innerHTML += `
+          <div class="product-card">
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>₹${product.price}</p>
+            <button onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+          </div>
+        `;
+      });
+    }).catch((error) => {
+      console.error("Error loading products: ", error);
+    });
+  }
+
+  // Call the function when the page loads
+  window.addEventListener("DOMContentLoaded", loadProducts);
+</script></body>
 </html>
